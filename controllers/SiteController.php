@@ -2,7 +2,10 @@
 
 namespace app\controllers;
 
+use app\models\Config;
+use app\models\TestForm;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -122,5 +125,23 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionConfig(){
+        $isGameOn = Config::getArg('_IS_GAME_ON');
+
+        $dataProviderConfig = new ActiveDataProvider([
+            'query' => Config::find()->where(['isChangable' => 1]),
+            'pagination' => [
+                'pageSize' => 15,
+                'pageParam' => 'cfg-page'
+            ]
+        ]);
+
+        return $this->render('config', [
+            'dataProviderConfig' => $dataProviderConfig,
+            'isGameOn' => $isGameOn,
+            'model' => new TestForm()
+        ]);
     }
 }

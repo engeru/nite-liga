@@ -29,7 +29,7 @@ $this->title = 'Nite liga';
 
                 <p>Выбор игры, настройка параметров запуска</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Перейти</a></p>
+                <p><?= \yii\helpers\Html::a('Перейти', 'index.php?r=site%2Fconfig', ['class' => 'btn btn-default'])?></p>
             </div>
             <div class="col-lg-4">
                 <h2>Регистрация команд</h2>

@@ -9,7 +9,22 @@
 namespace app\models;
 
 
-class TestForm
+use yii\base\Model;
+
+class TestForm extends Model
 {
+    public $tmHint;
+    public $tmAddr;
+    public $tmDrop;
+    public $tmDelay;
+    public $teams;
+    public $setDefault;
+
+    public function rules(){
+        return [
+            [['tmHint', 'tmAddr', 'tmDrop', 'tmDelay'], 'number', 'max' => 600, 'min' => 10],
+            [['setDefault'], 'boolean']
+        ];
+    }
 
 }
