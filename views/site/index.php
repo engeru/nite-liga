@@ -27,7 +27,7 @@ $this->title = 'Nite liga';
             <div class="col-lg-4">
                 <h2>Настройки</h2>
 
-                <p>Выбор игры, настройка параметров запуска</p>
+                <p>Выбор игры, настройка параметров запуска, запуск теста игры</p>
 
                 <p><?= \yii\helpers\Html::a('Перейти', 'index.php?r=site%2Fconfig', ['class' => 'btn btn-default'])?></p>
             </div>
@@ -36,7 +36,7 @@ $this->title = 'Nite liga';
 
                 <p>Заявки участников, распределение участников по командам</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Перейти</a></p>
+                <p><?= \yii\helpers\Html::a('Перейти', 'index.php?r=site%2Freg-teams', ['class' => 'btn btn-default'])?></p>
             </div>
         </div>
 

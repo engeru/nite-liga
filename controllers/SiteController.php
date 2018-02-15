@@ -12,6 +12,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Players;
+use app\models\PlayerInTeam;
 
 class SiteController extends Controller
 {
@@ -128,6 +130,20 @@ class SiteController extends Controller
     }
 
     public function actionConfig(){
+
+        //
+        if(Yii::$app->request->isAjax){
+           $action = Yii::$app->request->post('action');
+           switch($action){
+               case 'runGame':
+                   break;
+               case 'runTest':
+                   break;
+               default:
+
+           }
+        }
+
         $isGameOn = Config::getArg('_IS_GAME_ON');
 
         $dataProviderConfig = new ActiveDataProvider([
@@ -142,6 +158,30 @@ class SiteController extends Controller
             'dataProviderConfig' => $dataProviderConfig,
             'isGameOn' => $isGameOn,
             'model' => new TestForm()
+        ]);
+    }
+
+    public function actionRegTeams(){
+
+        $dataProvederPlayers = new ActiveDataProvider([
+            'query' => Players::find(),
+            'pagination' => [
+                'pageSize' => 15,
+                'pageParam' => 'plr-page'
+            ]
+        ]);
+
+        $dataProvederTeams = new ActiveDataProvider([
+            'query' => PlayerInTeam::find(),
+            'pagination' => [
+                'pageSize' => 15,
+                'pageParam' => 'tm-page'
+            ]
+        ]);
+
+        return $this->render('reg-teams', [
+            'dataProviderPlayers' => $dataProvederPlayers,
+            'dataProviderTeams' => $dataProvederTeams
         ]);
     }
 }

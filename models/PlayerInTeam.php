@@ -9,7 +9,12 @@
 namespace app\models;
 
 
-class PlayerInTeam
-{
+use yii\db\ActiveRecord;
 
+class PlayerInTeam extends ActiveRecord
+{
+    public static function tableName()
+    {
+        return 'PlayerInTeam';
+    }
 }

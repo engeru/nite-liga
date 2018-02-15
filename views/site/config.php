@@ -59,12 +59,12 @@ $this->registerJS($script, 3);
                     <p>Укажите параметры времени тестового запуска (сек)</p>
 
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-5">
                     <br>
-                    <?= $testForm->field($model, 'tmHint')->label(false) ?>
-                    <?= $testForm->field($model, 'tmAddr')->label(false) ?>
-                    <?= $testForm->field($model, 'tmDrop')->label(false) ?>
-                    <?= $testForm->field($model, 'tmDelay')->label(false) ?>
+                    <?= $testForm->field($model, 'tmHint')->label(false)->textInput(['placeholder' => 'до подсказки', 'style' =>'text-overflow: ellipsis']) ?>
+                    <?= $testForm->field($model, 'tmAddr')->label(false)->textInput(['placeholder' => 'до адреса', 'style' =>'text-overflow: ellipsis']) ?>
+                    <?= $testForm->field($model, 'tmDrop')->label(false)->textInput(['placeholder' => 'до слива', 'style' =>'text-overflow: ellipsis'])  ?>
+                    <?= $testForm->field($model, 'tmDelay')->label(false)->textInput(['placeholder' => 'задержка', 'style' =>'text-overflow: ellipsis']) ?>
                 </div>
             </div>
             <div class="row">

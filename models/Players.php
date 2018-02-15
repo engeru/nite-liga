@@ -9,7 +9,12 @@
 namespace app\models;
 
 
-class Players
-{
+use yii\db\ActiveRecord;
 
+class Players extends ActiveRecord
+{
+    public static function tableName()
+    {
+        return 'tblplayer';
+    }
 }
