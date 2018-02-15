@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Alexei
- * Date: 11.02.2018
- * Time: 15:32
+ * User: Aleksei
+ * Date: 14.02.2018
+ * Time: 14:26
  */
 
 namespace app\models;
@@ -13,5 +13,7 @@ use yii\db\ActiveRecord;
 
 class Config extends ActiveRecord
 {
-
+    public static function getArg($arg){
+        return Config::find()->select(['val'])->where(['arg' => $arg])->column()[0];
+    }
 }

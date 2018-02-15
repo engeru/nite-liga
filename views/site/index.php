@@ -2,8 +2,6 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
-
 $this->title = 'Nite liga';
 ?>
 <div class="site-index">
@@ -23,21 +21,22 @@ $this->title = 'Nite liga';
                 <h2>Участники</h2>
 
                 <p>Раздел с общей информацией о командах, участниках, проведённых играх...</p>
-                <p><?= Html::a('Перейти', ['players-info'], ['class' => 'btn btn-default']) ?></p>
+
+                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Перейти</a></p>
             </div>
             <div class="col-lg-4">
                 <h2>Настройки</h2>
 
-                <p>Выбор и запуск игры, настройка параметров запуска, управоение игровым процессом...</p>
+                <p>Выбор игры, настройка параметров запуска, запуск теста игры</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Перейти</a></p>
+                <p><?= \yii\helpers\Html::a('Перейти', 'index.php?r=site%2Fconfig', ['class' => 'btn btn-default'])?></p>
             </div>
             <div class="col-lg-4">
                 <h2>Регистрация команд</h2>
 
-                <p>Заявки участников, распределение участников по командам, создание команд...</p>
+                <p>Заявки участников, распределение участников по командам</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Перейти</a></p>
+                <p><?= \yii\helpers\Html::a('Перейти', 'index.php?r=site%2Freg-teams', ['class' => 'btn btn-default'])?></p>
             </div>
         </div>
 

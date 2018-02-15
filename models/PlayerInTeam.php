@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Aleksei
- * Date: 13.02.2018
- * Time: 10:09
+ * Date: 15.02.2018
+ * Time: 13:51
  */
 
 namespace app\models;
@@ -11,10 +11,10 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class Players extends ActiveRecord
+class PlayerInTeam extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'tblplayer';
+        return 'PlayerInTeam';
     }
 }

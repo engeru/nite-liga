@@ -2,7 +2,8 @@
 
 namespace app\controllers;
 
-use app\models\Games;
+use app\models\Config;
+use app\models\TestForm;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
@@ -12,13 +13,13 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Players;
+use app\models\PlayerInTeam;
 
 class SiteController extends Controller
 {
     /**
      * @inheritdoc
      */
-
     public function behaviors()
     {
         return [
@@ -45,8 +46,6 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */
-
-
     public function actions()
     {
         return [
@@ -80,8 +79,8 @@ class SiteController extends Controller
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-        $model = new LoginForm();
 
+        $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
@@ -130,31 +129,59 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionPlayersInfo(){
+    public function actionConfig(){
 
-        $dataProPlayers = new ActiveDataProvider([
+        //
+        if(Yii::$app->request->isAjax){
+           $action = Yii::$app->request->post('action');
+           switch($action){
+               case 'runGame':
+                   break;
+               case 'runTest':
+                   break;
+               default:
+
+           }
+        }
+
+        $isGameOn = Config::getArg('_IS_GAME_ON');
+
+        $dataProviderConfig = new ActiveDataProvider([
+            'query' => Config::find()->where(['isChangable' => 1]),
+            'pagination' => [
+                'pageSize' => 15,
+                'pageParam' => 'cfg-page'
+            ]
+        ]);
+
+        return $this->render('config', [
+            'dataProviderConfig' => $dataProviderConfig,
+            'isGameOn' => $isGameOn,
+            'model' => new TestForm()
+        ]);
+    }
+
+    public function actionRegTeams(){
+
+        $dataProvederPlayers = new ActiveDataProvider([
             'query' => Players::find(),
             'pagination' => [
                 'pageSize' => 15,
-                'pageSizeParam' => false,
-                'pageParam' => 'pl-page'
-            ],
-
+                'pageParam' => 'plr-page'
+            ]
         ]);
 
-        $dataProGames = new ActiveDataProvider([
-            'query' => Games::find(),
+        $dataProvederTeams = new ActiveDataProvider([
+            'query' => PlayerInTeam::find(),
             'pagination' => [
-                'pageSize' => 5,
-                'pageSizeParam' => false,
-                'pageParam' => 'gm-page'
-            ],
-
+                'pageSize' => 15,
+                'pageParam' => 'tm-page'
+            ]
         ]);
 
-        return $this->render('players-info',[
-            'dataProPlayers' => $dataProPlayers,
-            'dataProGames' => $dataProGames,
+        return $this->render('reg-teams', [
+            'dataProviderPlayers' => $dataProvederPlayers,
+            'dataProviderTeams' => $dataProvederTeams
         ]);
     }
 }

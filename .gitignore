@@ -1,0 +1,4 @@
+.idea/
+composer.phar
+config/db-set.json
+logs/
