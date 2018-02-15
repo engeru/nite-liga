@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Config;
+use app\models\Games;
 use app\models\TestForm;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -182,6 +183,30 @@ class SiteController extends Controller
         return $this->render('reg-teams', [
             'dataProviderPlayers' => $dataProvederPlayers,
             'dataProviderTeams' => $dataProvederTeams
+        ]);
+    }
+
+    public function actionPlayersInfo(){
+
+        $dataProviderPlayers = new ActiveDataProvider([
+            'query' => Players::find(),
+            'pagination' => [
+                'pageSize' => 15,
+                'pageParam' => 'plr-page'
+            ]
+        ]);
+
+        $dataProviderGames = new ActiveDataProvider([
+            'query' => Games::find(),
+            'pagination' => [
+                'pageSize' => 5,
+                'pageParam' => 'gm-page'
+            ]
+        ]);
+
+        return $this->render('players-info', [
+            'dataProviderPlayers' => $dataProviderPlayers,
+            'dataProviderGames' => $dataProviderGames,
         ]);
     }
 }

@@ -11,7 +11,7 @@ use \yii\grid\GridView;
 <div class="row">
     <div class="col-sm-4">
         <?= GridView::widget([
-            'dataProvider' => $dataProPlayers,
+            'dataProvider' => $dataProviderPlayers,
             'columns' => [
                 [
                     'attribute' => 'vkid',
@@ -32,7 +32,7 @@ use \yii\grid\GridView;
     </div>
     <div class="col-sm-8">
         <?= GridView::widget([
-            'dataProvider' => $dataProGames,
+            'dataProvider' => $dataProviderGames,
             'columns' => [
 
             ]

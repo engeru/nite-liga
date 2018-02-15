@@ -22,7 +22,7 @@ $this->title = 'Nite liga';
 
                 <p>Раздел с общей информацией о командах, участниках, проведённых играх...</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Перейти</a></p>
+                <p><?= \yii\helpers\Html::a('Перейти', 'index.php?r=site%2Fplayers-info', ['class' => 'btn btn-default'])?></p>
             </div>
             <div class="col-lg-4">
                 <h2>Настройки</h2>
