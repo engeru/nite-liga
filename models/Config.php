@@ -9,7 +9,9 @@
 namespace app\models;
 
 
-class Config
+use yii\db\ActiveRecord;
+
+class Config extends ActiveRecord
 {
 
 }

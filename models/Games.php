@@ -8,8 +8,11 @@
 
 namespace app\models;
 
+use yii\db\ActiveRecord;
 
-class Games
+class Games extends ActiveRecord
 {
-
+    public static function tableName(){
+        return 'tblgame';
+    }
 }
