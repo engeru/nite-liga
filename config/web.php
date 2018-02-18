@@ -43,7 +43,6 @@ $config = [
             ],
         ],
         'db' => $db,
-
     //        'urlManager' => [
     //            'enablePrettyUrl' => true,
     //            'showScriptName' => false,
@@ -53,6 +52,10 @@ $config = [
     //        ],
 
     ],
+    'modules' => [
+        'gridview' => ['class' => 'kartik\grid\Module']
+    ],
+
     'params' => $params,
 ];
 

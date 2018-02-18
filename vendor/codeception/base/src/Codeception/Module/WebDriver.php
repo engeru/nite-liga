@@ -499,7 +499,7 @@ class WebDriver extends CodeceptionModule implements
     public function _failed(TestInterface $test, $fail)
     {
         $this->debugWebDriverLogs($test);
-        $filename = preg_replace('~\W~', '.', Descriptor::getTestSignature($test));
+        $filename = preg_replace('~\W~', '.', Descriptor::getTestSignatureUnique($test));
         $outputDir = codecept_output_dir();
         $this->_saveScreenshot($report = $outputDir . mb_strcut($filename, 0, 245, 'utf-8') . '.fail.png');
         $test->getMetadata()->addReport('png', $report);
@@ -1011,7 +1011,7 @@ class WebDriver extends CodeceptionModule implements
             ".//input[./@type = 'image'][contains(./@alt, $locator)]",
             ".//button[contains(normalize-space(string(.)), $locator)]",
             ".//input[./@type = 'submit' or ./@type = 'image' or ./@type = 'button'][./@name = $locator]",
-            ".//button[./@name = $locator]"
+            ".//button[./@name = $locator or ./@title = $locator]"
         );
 
         $els = $page->findElements(WebDriverBy::xpath($xpath));
@@ -1907,6 +1907,28 @@ class WebDriver extends CodeceptionModule implements
     }
 
     /**
+     * Checks that the active JavaScript popup,
+     * as created by `window.alert`|`window.confirm`|`window.prompt`, does NOT contain the given string.
+     *
+     * @param $text
+     *
+     * @throws \Codeception\Exception\ModuleException
+     */
+    public function dontSeeInPopup($text)
+    {
+        if ($this->isPhantom()) {
+            throw new ModuleException($this, 'PhantomJS does not support working with popups');
+        }
+        $alert = $this->webDriver->switchTo()->alert();
+        try {
+            $this->assertNotContains($text, $alert->getText());
+        } catch (\PHPUnit_Framework_AssertionFailedError $e) {
+            $alert->dismiss();
+            throw $e;
+        }
+    }
+
+    /**
      * Enters text into a native JavaScript prompt popup, as created by `window.prompt`.
      *
      * @param $keys
@@ -2464,15 +2486,42 @@ class WebDriver extends CodeceptionModule implements
      * ```php
      * <?php
      * $myVar = $I->executeJS('return $("#myField").val()');
-     * ?>
+     *
+     * // additional arguments can be passed as array
+     * // Example shows `Hello World` alert:
+     * $I->executeJS("window.alert(arguments[0])", ['Hello world']);
      * ```
      *
      * @param $script
+     * @param array $arguments
      * @return mixed
      */
-    public function executeJS($script)
+    public function executeJS($script, array $arguments = [])
     {
-        return $this->webDriver->executeScript($script);
+        return $this->webDriver->executeScript($script, $arguments);
+    }
+
+    /**
+     * Executes asynchronous JavaScript.
+     * A callback should be executed by JavaScript to exit from a script.
+     * Callback is passed as a last element in `arguments` array.
+     * Additional arguments can be passed as array in second parameter.
+     *
+     * ```js
+     * // wait for 1200 milliseconds my running `setTimeout`
+     * * $I->executeAsyncJS('setTimeout(arguments[0], 1200)');
+     *
+     * $seconds = 1200; // or seconds are passed as argument
+     * $I->executeAsyncJS('setTimeout(arguments[1], arguments[0])', [$seconds]);
+     * ```
+     *
+     * @param $script
+     * @param array $arguments
+     * @return mixed
+     */
+    public function executeAsyncJS($script, array $arguments = [])
+    {
+        return $this->webDriver->executeAsyncScript($script, $arguments);
     }
 
     /**
@@ -2898,10 +2947,10 @@ class WebDriver extends CodeceptionModule implements
                 } elseif ($type == 'radio') {
                     $this->selectOption($field, $value);
                     return;
-                } else {
-                    $el->sendKeys($value);
-                    return;
                 }
+
+                $el->sendKeys($value);
+                return;
         }
 
         throw new ElementNotFound($field, "Field by name, label, CSS or XPath");

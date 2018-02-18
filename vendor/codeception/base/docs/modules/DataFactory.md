@@ -9,7 +9,6 @@ This module requires packages installed:
 ```json
 {
  "league/factory-muffin": "^3.0",
- "league/factory-muffin-faker": "^1.0"
 }
 ```
 
@@ -110,7 +109,6 @@ In case your ORM expects a related record itself (Doctrine) then you should use 
 ```php
 'user' => 'entity|User'
 ```
-
 
 ## Actions
 

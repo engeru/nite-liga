@@ -22,7 +22,6 @@ Performs a cleanup by flushing all values after each test run.
 Be sure you don't use the production server to connect.
 
 
-
 ## Actions
 
 ### dontSeeInApc

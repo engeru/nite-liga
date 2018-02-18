@@ -158,7 +158,7 @@ class MongoDb extends CodeceptionModule implements RequiresPackage
                         "Tar gunzip archives are not supported for Windows systems"
                     );
                 }
-                if (strlen($this->dumpFile) <= 7 || substr($this->dumpFile, -7) !== '.tar.gz') {
+                if (!preg_match('/(\.tar\.gz|\.tgz)$/', $this->dumpFile)) {
                     throw new ModuleConfigException(
                         __CLASS__,
                         "Dump file must be a valid tar gunzip archive.\n
@@ -265,10 +265,10 @@ class MongoDb extends CodeceptionModule implements RequiresPackage
         if ($this->driver->isLegacy()) {
             $collection->insert($data);
             return $data['_id'];
-        } else {
-            $response = $collection->insertOne($data);
-            return (string) $response->getInsertedId();
         }
+
+        $response = $collection->insertOne($data);
+        return (string) $response->getInsertedId();
     }
 
     /**

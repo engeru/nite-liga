@@ -83,7 +83,6 @@ modules:
             environment_file: .env.testing
 ```
 
-
 ## Actions
 
 ### _findElements
@@ -768,7 +767,6 @@ Fails if element is not found.
 $I->grabAttributeFrom('#tooltip', 'title');
 ?>
 ```
-
 
  * `param` $cssOrXpath
  * `param` $attribute

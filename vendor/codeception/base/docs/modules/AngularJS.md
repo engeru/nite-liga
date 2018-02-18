@@ -33,7 +33,6 @@ Example:
 $I->selectOption(['model' => 'customerId'], '3');
 ```
 
-
 ## Actions
 
 ### _backupSession
@@ -650,6 +649,16 @@ Checks that the page source doesn't contain the given string.
  * `param` $text
 
 
+### dontSeeInPopup
+ 
+Checks that the active JavaScript popup,
+as created by `window.alert`|`window.confirm`|`window.prompt`, does NOT contain the given string.
+
+ * `param` $text
+
+@throws \Codeception\Exception\ModuleException
+
+
 ### dontSeeInSource
  
 Checks that the current page contains the given string in its
@@ -724,6 +733,25 @@ $I->dragAndDrop('#drag', '#drop');
  * `param string` $target (CSS ID or XPath)
 
 
+### executeAsyncJS
+ 
+Executes asynchronous JavaScript.
+A callback should be executed by JavaScript to exit from a script.
+Callback is passed as a last element in `arguments` array.
+Additional arguments can be passed as array in second parameter.
+
+```js
+// wait for 1200 milliseconds my running `setTimeout`
+* $I->executeAsyncJS('setTimeout(arguments[0], 1200)');
+
+$seconds = 1200; // or seconds are passed as argument
+$I->executeAsyncJS('setTimeout(arguments[1], arguments[0])', [$seconds]);
+```
+
+ * `param` $script
+ * `param array` $arguments
+
+
 ### executeInSelenium
  
 Low-level API method.
@@ -752,10 +780,14 @@ This example uses jQuery to get a value and assigns that value to a PHP variable
 ```php
 <?php
 $myVar = $I->executeJS('return $("#myField").val()');
-?>
+
+// additional arguments can be passed as array
+// Example shows `Hello World` alert:
+$I->executeJS("window.alert(arguments[0])", ['Hello world']);
 ```
 
  * `param` $script
+ * `param array` $arguments
 
 
 ### fillField
@@ -783,7 +815,6 @@ Fails if element is not found.
 $I->grabAttributeFrom('#tooltip', 'title');
 ?>
 ```
-
 
  * `param` $cssOrXpath
  * `param` $attribute

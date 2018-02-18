@@ -21,7 +21,6 @@ Uses `config/container.php` file by default.
 * client - BrowserKit client
 
 
-
 ## Actions
 
 ### _findElements
@@ -513,7 +512,6 @@ Fails if element is not found.
 $I->grabAttributeFrom('#tooltip', 'title');
 ?>
 ```
-
 
  * `param` $cssOrXpath
  * `param` $attribute

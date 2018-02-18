@@ -56,7 +56,6 @@ class TestHelper extends \Codeception\Module {
 This will make your functional tests run super-fast.
 
 
-
 ## Actions
 
 ### _findElements
@@ -563,7 +562,6 @@ Fails if element is not found.
 $I->grabAttributeFrom('#tooltip', 'title');
 ?>
 ```
-
 
  * `param` $cssOrXpath
  * `param` $attribute

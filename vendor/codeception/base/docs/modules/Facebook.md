@@ -72,7 +72,6 @@ $I->see('Welcome, ' . $fbUserFirstName);
 @since 1.6.3
 @author tiger.seo@gmail.com
 
-
 ## Actions
 
 ### grabFacebookTestUserAccessToken
@@ -139,7 +138,6 @@ Please, note that you must have publish_actions permission to be able to publish
 
 
 ### seePostOnFacebookWithAttachedPlace
- 
 
 Please, note that you must have publish_actions permission to be able to publish to user's feed.
 
@@ -147,7 +145,6 @@ Please, note that you must have publish_actions permission to be able to publish
 
 
 ### seePostOnFacebookWithMessage
- 
 
 Please, note that you must have publish_actions permission to be able to publish to user's feed.
 

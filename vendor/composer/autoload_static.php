@@ -7,11 +7,11 @@ namespace Composer\Autoload;
 class ComposerStaticInit64ef05c9fe4d23466906586e3f2963af
 {
     public static $files = array (
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
     );
 
@@ -30,6 +30,12 @@ class ComposerStaticInit64ef05c9fe4d23466906586e3f2963af
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'k' => 
+        array (
+            'kartik\\grid\\' => 12,
+            'kartik\\dialog\\' => 14,
+            'kartik\\base\\' => 12,
+        ),
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
@@ -45,15 +51,12 @@ class ComposerStaticInit64ef05c9fe4d23466906586e3f2963af
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\DomCrawler\\' => 29,
-            'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\BrowserKit\\' => 29,
-            'Stecman\\Component\\Symfony\\Console\\BashCompletion\\' => 49,
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
         ),
         'G' => 
@@ -99,7 +102,7 @@ class ComposerStaticInit64ef05c9fe4d23466906586e3f2963af
         ),
         'yii\\bootstrap\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src',
         ),
         'yii\\' => 
         array (
@@ -108,8 +111,20 @@ class ComposerStaticInit64ef05c9fe4d23466906586e3f2963af
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'kartik\\grid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-grid',
+        ),
+        'kartik\\dialog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-dialog',
+        ),
+        'kartik\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -139,10 +154,6 @@ class ComposerStaticInit64ef05c9fe4d23466906586e3f2963af
         array (
             0 => __DIR__ . '/..' . '/symfony/dom-crawler',
         ),
-        'Symfony\\Component\\Debug\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/debug',
-        ),
         'Symfony\\Component\\CssSelector\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/css-selector',
@@ -154,14 +165,6 @@ class ComposerStaticInit64ef05c9fe4d23466906586e3f2963af
         'Symfony\\Component\\BrowserKit\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
-        ),
-        'Stecman\\Component\\Symfony\\Console\\BashCompletion\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/stecman/symfony-console-completion/src',
-        ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -190,6 +193,7 @@ class ComposerStaticInit64ef05c9fe4d23466906586e3f2963af
         'Codeception\\' => 
         array (
             0 => __DIR__ . '/..' . '/codeception/base/src/Codeception',
+            1 => __DIR__ . '/..' . '/codeception/stub/src',
         ),
     );
 
@@ -301,6 +305,49 @@ class ComposerStaticInit64ef05c9fe4d23466906586e3f2963af
         'PHPUnit\\Framework\\IncompleteTestError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/IncompleteTestError.php',
         'PHPUnit\\Framework\\InvalidCoversTargetException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/InvalidCoversTargetException.php',
         'PHPUnit\\Framework\\MissingCoversAnnotationException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/MissingCoversAnnotationException.php',
+        'PHPUnit\\Framework\\MockObject\\BadMethodCallException' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Exception/BadMethodCallException.php',
+        'PHPUnit\\Framework\\MockObject\\Builder\\Identity' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/Identity.php',
+        'PHPUnit\\Framework\\MockObject\\Builder\\InvocationMocker' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/InvocationMocker.php',
+        'PHPUnit\\Framework\\MockObject\\Builder\\Match' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/Match.php',
+        'PHPUnit\\Framework\\MockObject\\Builder\\MethodNameMatch' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/MethodNameMatch.php',
+        'PHPUnit\\Framework\\MockObject\\Builder\\NamespaceMatch' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/NamespaceMatch.php',
+        'PHPUnit\\Framework\\MockObject\\Builder\\ParametersMatch' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/ParametersMatch.php',
+        'PHPUnit\\Framework\\MockObject\\Builder\\Stub' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/Stub.php',
+        'PHPUnit\\Framework\\MockObject\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Exception/Exception.php',
+        'PHPUnit\\Framework\\MockObject\\Generator' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Generator.php',
+        'PHPUnit\\Framework\\MockObject\\Invocation' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Invocation/Invocation.php',
+        'PHPUnit\\Framework\\MockObject\\InvocationMocker' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/InvocationMocker.php',
+        'PHPUnit\\Framework\\MockObject\\Invocation\\ObjectInvocation' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Invocation/ObjectInvocation.php',
+        'PHPUnit\\Framework\\MockObject\\Invocation\\StaticInvocation' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Invocation/StaticInvocation.php',
+        'PHPUnit\\Framework\\MockObject\\Invokable' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Invokable.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\AnyInvokedCount' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/AnyInvokedCount.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\AnyParameters' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/AnyParameters.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\ConsecutiveParameters' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/ConsecutiveParameters.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\Invocation' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/Invocation.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\InvokedAtIndex' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtIndex.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\InvokedAtLeastCount' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtLeastCount.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\InvokedAtLeastOnce' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtLeastOnce.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\InvokedAtMostCount' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtMostCount.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\InvokedCount' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedCount.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\InvokedRecorder' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedRecorder.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\MethodName' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/MethodName.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\Parameters' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/Parameters.php',
+        'PHPUnit\\Framework\\MockObject\\Matcher\\StatelessInvocation' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/StatelessInvocation.php',
+        'PHPUnit\\Framework\\MockObject\\MockBuilder' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/MockBuilder.php',
+        'PHPUnit\\Framework\\MockObject\\MockObject' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/ForwardCompatibility/MockObject.php',
+        'PHPUnit\\Framework\\MockObject\\RuntimeException' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Exception/RuntimeException.php',
+        'PHPUnit\\Framework\\MockObject\\Stub' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub.php',
+        'PHPUnit\\Framework\\MockObject\\Stub\\ConsecutiveCalls' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ConsecutiveCalls.php',
+        'PHPUnit\\Framework\\MockObject\\Stub\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/Exception.php',
+        'PHPUnit\\Framework\\MockObject\\Stub\\MatcherCollection' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/MatcherCollection.php',
+        'PHPUnit\\Framework\\MockObject\\Stub\\ReturnArgument' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ReturnArgument.php',
+        'PHPUnit\\Framework\\MockObject\\Stub\\ReturnCallback' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ReturnCallback.php',
+        'PHPUnit\\Framework\\MockObject\\Stub\\ReturnReference' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ReturnReference.php',
+        'PHPUnit\\Framework\\MockObject\\Stub\\ReturnSelf' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ReturnSelf.php',
+        'PHPUnit\\Framework\\MockObject\\Stub\\ReturnStub' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ReturnStub.php',
+        'PHPUnit\\Framework\\MockObject\\Stub\\ReturnValueMap' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ReturnValueMap.php',
+        'PHPUnit\\Framework\\MockObject\\Verifiable' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Verifiable.php',
         'PHPUnit\\Framework\\OutputError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/OutputError.php',
         'PHPUnit\\Framework\\RiskyTest' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/RiskyTest.php',
         'PHPUnit\\Framework\\RiskyTestError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/RiskyTestError.php',
@@ -345,6 +392,7 @@ class ComposerStaticInit64ef05c9fe4d23466906586e3f2963af
         'PHPUnit\\Util\\Getopt' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Getopt.php',
         'PHPUnit\\Util\\GlobalState' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/GlobalState.php',
         'PHPUnit\\Util\\InvalidArgumentHelper' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/InvalidArgumentHelper.php',
+        'PHPUnit\\Util\\Json' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Json.php',
         'PHPUnit\\Util\\Log\\JUnit' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Log/JUnit.php',
         'PHPUnit\\Util\\Log\\TeamCity' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Log/TeamCity.php',
         'PHPUnit\\Util\\PHP\\AbstractPhpProcess' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/PHP/AbstractPhpProcess.php',
@@ -362,49 +410,7 @@ class ComposerStaticInit64ef05c9fe4d23466906586e3f2963af
         'PHPUnit\\Util\\Type' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Type.php',
         'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml.php',
         'PHPUnit\\Util\\XmlTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XmlTestListRenderer.php',
-        'PHPUnit_Framework_MockObject_BadMethodCallException' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Exception/BadMethodCallException.php',
-        'PHPUnit_Framework_MockObject_Builder_Identity' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/Identity.php',
-        'PHPUnit_Framework_MockObject_Builder_InvocationMocker' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/InvocationMocker.php',
-        'PHPUnit_Framework_MockObject_Builder_Match' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/Match.php',
-        'PHPUnit_Framework_MockObject_Builder_MethodNameMatch' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/MethodNameMatch.php',
-        'PHPUnit_Framework_MockObject_Builder_Namespace' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/Namespace.php',
-        'PHPUnit_Framework_MockObject_Builder_ParametersMatch' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/ParametersMatch.php',
-        'PHPUnit_Framework_MockObject_Builder_Stub' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/Stub.php',
-        'PHPUnit_Framework_MockObject_Exception' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Exception/Exception.php',
-        'PHPUnit_Framework_MockObject_Generator' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Generator.php',
-        'PHPUnit_Framework_MockObject_Invocation' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Invocation.php',
-        'PHPUnit_Framework_MockObject_InvocationMocker' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/InvocationMocker.php',
-        'PHPUnit_Framework_MockObject_Invocation_Object' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Invocation/Object.php',
-        'PHPUnit_Framework_MockObject_Invocation_Static' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Invocation/Static.php',
-        'PHPUnit_Framework_MockObject_Invokable' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Invokable.php',
-        'PHPUnit_Framework_MockObject_Matcher' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher.php',
-        'PHPUnit_Framework_MockObject_Matcher_AnyInvokedCount' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/AnyInvokedCount.php',
-        'PHPUnit_Framework_MockObject_Matcher_AnyParameters' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/AnyParameters.php',
-        'PHPUnit_Framework_MockObject_Matcher_ConsecutiveParameters' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/ConsecutiveParameters.php',
-        'PHPUnit_Framework_MockObject_Matcher_Invocation' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/Invocation.php',
-        'PHPUnit_Framework_MockObject_Matcher_InvokedAtIndex' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtIndex.php',
-        'PHPUnit_Framework_MockObject_Matcher_InvokedAtLeastCount' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtLeastCount.php',
-        'PHPUnit_Framework_MockObject_Matcher_InvokedAtLeastOnce' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtLeastOnce.php',
-        'PHPUnit_Framework_MockObject_Matcher_InvokedAtMostCount' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtMostCount.php',
-        'PHPUnit_Framework_MockObject_Matcher_InvokedCount' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedCount.php',
-        'PHPUnit_Framework_MockObject_Matcher_InvokedRecorder' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/InvokedRecorder.php',
-        'PHPUnit_Framework_MockObject_Matcher_MethodName' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/MethodName.php',
-        'PHPUnit_Framework_MockObject_Matcher_Parameters' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/Parameters.php',
-        'PHPUnit_Framework_MockObject_Matcher_StatelessInvocation' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Matcher/StatelessInvocation.php',
-        'PHPUnit_Framework_MockObject_MockBuilder' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/MockBuilder.php',
         'PHPUnit_Framework_MockObject_MockObject' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/MockObject.php',
-        'PHPUnit_Framework_MockObject_RuntimeException' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Exception/RuntimeException.php',
-        'PHPUnit_Framework_MockObject_Stub' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub.php',
-        'PHPUnit_Framework_MockObject_Stub_ConsecutiveCalls' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ConsecutiveCalls.php',
-        'PHPUnit_Framework_MockObject_Stub_Exception' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/Exception.php',
-        'PHPUnit_Framework_MockObject_Stub_MatcherCollection' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/MatcherCollection.php',
-        'PHPUnit_Framework_MockObject_Stub_Return' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/Return.php',
-        'PHPUnit_Framework_MockObject_Stub_ReturnArgument' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ReturnArgument.php',
-        'PHPUnit_Framework_MockObject_Stub_ReturnCallback' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ReturnCallback.php',
-        'PHPUnit_Framework_MockObject_Stub_ReturnReference' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ReturnReference.php',
-        'PHPUnit_Framework_MockObject_Stub_ReturnSelf' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ReturnSelf.php',
-        'PHPUnit_Framework_MockObject_Stub_ReturnValueMap' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Stub/ReturnValueMap.php',
-        'PHPUnit_Framework_MockObject_Verifiable' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Verifiable.php',
         'PHP_Timer' => __DIR__ . '/..' . '/phpunit/php-timer/src/Timer.php',
         'PHP_Token' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_TokenWithScope' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',

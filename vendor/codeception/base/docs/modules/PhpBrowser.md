@@ -13,17 +13,15 @@ If test fails stores last shown page in 'output' dir.
 * Maintainer: **davert**
 * Stability: **stable**
 * Contact: codeception@codeception.com
-* Works with [Guzzle](http://guzzlephp.org/)
 
-*Please review the code of non-stable modules and provide patches if you have issues.*
 
 ## Configuration
 
 * url *required* - start url of your app
+* headers - default headers are set before each test.
 * handler (default: curl) -  Guzzle handler to use. By default curl is used, also possible to pass `stream`, or any valid class name as [Handler](http://docs.guzzlephp.org/en/latest/handlers-and-middleware.html#handlers).
 * middleware - Guzzle middlewares to add. An array of valid callables is required.
 * curl - curl options
-* headers - ...
 * cookies - ...
 * auth - ...
 * verify - ...
@@ -64,7 +62,6 @@ Properties:
 
 * `guzzle` - contains [Guzzle](http://guzzlephp.org/) client instance: `\GuzzleHttp\Client`
 * `client` - Symfony BrowserKit instance.
-
 
 
 ## Actions
@@ -612,7 +609,6 @@ Fails if element is not found.
 $I->grabAttributeFrom('#tooltip', 'title');
 ?>
 ```
-
 
  * `param` $cssOrXpath
  * `param` $attribute
