@@ -13,6 +13,10 @@ use yii\db\ActiveRecord;
 
 class Config extends ActiveRecord
 {
+    public function rules(){
+        return [
+        ];
+    }
     public static function getArg($arg){
         return Config::find()->select(['val'])->where(['arg' => $arg])->column()[0];
     }

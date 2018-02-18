@@ -45,6 +45,7 @@ $this->registerJS($script, 3);
             ],
             [
                 'attribute' =>'val',
+                'class' => \kartik\grid\EditableColumn::className(),
                 'header' => 'Значение'
             ],
         ]
